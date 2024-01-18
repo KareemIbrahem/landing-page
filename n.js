@@ -1,6 +1,9 @@
 const { google } = require("googleapis");
 const express = require("express");
-const cors = require("cors"); // Import the cors module
+const corsOptions = {
+  origin: "https://spot-hub-hub.vercel.app/",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 const app = express();
 const port = 3000;
 app.use(cors());
