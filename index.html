@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comming soon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container content">
+      <img src="logo-1.png" alt="logo" class="logo img-fluid" />
+      <div id="comming-soon" class="align-center">
+        <p class="com-span">Comming Soon!</p>
+        <ul class="countdown row">
+          <li class="text-center col col-lg-3">
+            <span class="count-span days">OO</span>
+            <p class="under-t">days</p>
+          </li>
+          <li class="text-center col col-lg-3">
+            <span class="count-span hours">OO</span>
+            <p class="under-t">hours</p>
+          </li>
+          <li class="text-center col col-lg-3">
+            <span class="count-span minutes">OO</span>
+            <p class="under-t">minutes</p>
+          </li>
+          <li class="text-center col col-lg-3">
+            <span class="count-span seconds">OO</span>
+            <p class="under-t">seconds</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="popup-overlay">
+          <div class="popWindow subscribe_window">
+            <img src="logo-1.png" alt="logo" class="logo-pop" />
+            <p class="subcsribe-text">
+              Subscribe to receive news and information
+            </p>
+            <form class="subscribe-form" autocomplete="off" id="subscribeForm">
+              <div>
+                <input
+                  type="text"
+                  id="name-subscribe"
+                  name="name"
+                  placeholder=" "
+                  required
+                />
+                <label for="name-subscribe"> <span>Name</span></label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="number-subscribe"
+                  name="phone"
+                  placeholder=" "
+                  required
+                />
+                <label for="number-subscribe"> <span>Phone</span></label>
+              </div>
+              <div class="aligncenter">
+                <button type="submit" value="Submit" class="btn">
+                  <i class="fa fa-check" aria-hidden="true"></i> Subscribe
+                </button>
+              </div>
+            </form>
+            <div class="close-btn">&times;</div>
+          </div>
+
+          <div class="popWindow thank_you_window">
+            <img src="logo-1.png" alt="logo" class="logo-pop" />
+            <p class="thank_you_title">Thank you for subscribing!</p>
+            <p class="thank_you_body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam,
+              hic.
+            </p>
+            <div class="close-btn">&times;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.downCount/1.0.0/jquery.downCount.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
