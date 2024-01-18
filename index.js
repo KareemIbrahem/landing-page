@@ -42,7 +42,7 @@ $(document).ready(function () {
   });
 
   // Form submission
-  $(".subscribe-form").on("submit touchend", function (event) {
+  $(".subscribe-form").on("submit", function (event) {
     event.preventDefault();
 
     console.log("sheet");
