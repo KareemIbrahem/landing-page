@@ -1,9 +1,10 @@
 const { google } = require("googleapis");
 const express = require("express");
 const corsOptions = {
-  origin: "https://spot-hub-kareemibrahems-projects.vercel.app/",
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: "https://spot-hub-kareemibrahems-projects.vercel.app",
+  optionsSuccessStatus: 200,
 };
+
 const app = express();
 const port = 3000;
 app.use(cors());
