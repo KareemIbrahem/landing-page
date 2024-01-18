@@ -42,7 +42,7 @@ $(document).ready(function () {
   });
 
   // Form submission
-  $(".subscribe-form").submit(function (event) {
+  $(".subscribe-form").on("submit click touchstart", function (event) {
     event.preventDefault();
 
     console.log("sheet");
