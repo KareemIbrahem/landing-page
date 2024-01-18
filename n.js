@@ -2,9 +2,10 @@ const { google } = require("googleapis");
 const express = require("express");
 const cors = require("cors");
 const corsOptions = {
-  origin: "*",
+  origin: "https://spot-hub-kareemibrahems-projects.vercel.app",
   optionsSuccessStatus: 200,
 };
+app.use(cors(corsOptions));
 
 const app = express();
 const port = 3000;

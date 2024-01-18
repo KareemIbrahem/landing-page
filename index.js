@@ -48,7 +48,9 @@ $(document).ready(function () {
     console.log("sheet");
     let name = $('[name="name"]').val();
     let phone = $('[name="phone"]').val();
-    fetch(`http://localhost:3000/append?name=${name}&phone=${phone}`)
+    fetch(
+      `https://spot-hub-kareemibrahems-projects.vercel.app/append?name=${name}&phone=${phone}`
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Error: ${response.status} - ${response.statusText}`);
