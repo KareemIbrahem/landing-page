@@ -1,5 +1,6 @@
 const { google } = require("googleapis");
 const express = require("express");
+const cors = require("cors");
 const corsOptions = {
   origin: "*",
   optionsSuccessStatus: 200,
