@@ -28,13 +28,13 @@ $(document).ready(function () {
   var $popThankYouWindow = $(".thank_you_window");
 
   // Close Pop-Up after clicking on the button "Close"
-  $popClose.on("click touchstart", function () {
+  $popClose.on("click ", function () {
     $popOverlay.fadeOut();
     $popWindow.fadeOut();
   });
 
   // Close Pop-Up after clicking on the Overlay
-  $(document).on("click touchstart", function (event) {
+  $(document).on("click ", function (event) {
     if ($(event.target).closest($popWindow).length) return;
     $popOverlay.fadeOut();
     $popWindow.fadeOut();
