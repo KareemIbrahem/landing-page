@@ -49,7 +49,7 @@ $(document).ready(function () {
     let name = $('[name="name"]').val();
     let phone = $('[name="phone"]').val();
     fetch(
-      `https://spot-hub-kareemibrahems-projects.vercel.app/append?name=${name}&phone=${phone}`
+      `https://sheets-node-app.onrender.com/append?name=${name}&phone=${phone}`
     )
       .then((response) => {
         if (!response.ok) {
