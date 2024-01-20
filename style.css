@@ -269,10 +269,7 @@ ul > li {
   .container {
     margin-top: 40%;
   }
-  .subscribe_window {
-    top: 10%;
-    margin-top: 0;
-  }
+
   .subscribe_window .subcsribe-text {
     padding: 0;
   }
@@ -297,6 +294,7 @@ ul > li {
   }
   .subscribe_window {
     top: 20%;
+    margin-top: 0;
   }
 }
 .content {
