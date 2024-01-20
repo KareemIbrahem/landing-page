@@ -65,7 +65,7 @@ $(document).ready(function () {
 
         setTimeout(() => {
           location.reload();
-        }, 35000000);
+        }, 4500);
       })
       .catch((error) => console.error("Error:", error));
   });
