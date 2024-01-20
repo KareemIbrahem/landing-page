@@ -288,6 +288,16 @@ ul > li {
     left: 20px;
     top: -18px;
   }
+  .popWindow {
+    width: 80%; /* Adjust the width for smaller screens */
+    margin-left: -40%; /* Adjust the left margin */
+  }
+  .thank_you_window {
+    top: 40%;
+  }
+  .subscribe_window {
+    top: 20%;
+  }
 }
 .content {
   opacity: 0; /* Initially hide the content */
