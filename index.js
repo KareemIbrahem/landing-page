@@ -135,14 +135,6 @@ $(document).ready(function () {
         "Please enter a valid phone number starting with 012, 011, 010, or 015, followed by 8 digits."
       );
       isValid = false;
-      //  } else {
-      //   // Check if the phone number is already in the sheet
-      //   if (existingPhoneNumbers.includes(phoneInput.trim())) {
-      //     $("#custom-error-message-phone").text(
-      //       "Phone number already in use. Please enter a unique number."
-      //     );
-      //     isValid = false;
-      //   }
     }
 
     return isValid;
