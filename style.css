@@ -280,9 +280,17 @@ ul > li {
     overflow: hidden;
   }
   .container {
-    margin-top: 40%;
+    margin-top: 13%;
   }
-
+  .counter-time {
+    padding: 2px;
+  }
+  .count-span {
+    font-size: 40px;
+  }
+  .under-t {
+    font-size: 13px;
+  }
   .subscribe_window .subcsribe-text {
     padding: 0;
   }
