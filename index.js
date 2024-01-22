@@ -5,7 +5,7 @@ $(document).ready(function () {
     contentElement.style.opacity = "1";
   }, 1000);
 
-  // Get the date
+  // Get the future date for countdown
   function calculateFutureDate() {
     var currentDate = new Date();
     currentDate.setDate(currentDate.getDate() + 20);
@@ -14,15 +14,16 @@ $(document).ready(function () {
     var mm = currentDate.getMonth() + 1;
     var y = currentDate.getFullYear();
 
-    return mm + "/" + dd + "/" + y + " 12:00:00";
+    return `${mm}/${dd}/${y} 12:00:00`;
   }
 
+  // Initialize countdown timer
   $(".countdown").downCount({
     date: calculateFutureDate(),
     offset: -4,
   });
 
-  // Close Pop-Up after clicking on the button "Close"
+  // Event handler for closing pop-up
   var $popClose = $(".close-btn");
   var $popOverlay = $(".popup-overlay");
   var $popWindow = $(".popWindow");
@@ -54,6 +55,8 @@ $(document).ready(function () {
     console.log("sheet");
     let name = $('[name="name"]').val();
     let phone = $('[name="phone"]').val();
+
+    // Perform asynchronous form submission
     fetch(
       `https://sheets-node-app.onrender.com/append?name=${name}&phone=${phone}`
     )
@@ -64,16 +67,32 @@ $(document).ready(function () {
         return response.json();
       })
       .then((data) => {
-        // Show the "Thank you" message
-        $subscribeWindow.fadeOut();
-        $popOverlay.fadeIn();
-        $popThankYouWindow.fadeIn();
+        // Check if the response contains an error message
+        if (data && data.error) {
+          // Show error message to the user
+          $("#custom-error-message-phone").text(data.error);
+        } else {
+          // Show the "Thank you" message
+          $subscribeWindow.fadeOut();
+          $popOverlay.fadeIn();
+          $popThankYouWindow.fadeIn();
 
-        setTimeout(() => {
-          location.reload();
-        }, 4500);
+          // Reload the page after 4.5 seconds
+          setTimeout(() => {
+            location.reload();
+          }, 4500);
+        }
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        // Handle 400 Bad Request error
+        if (error.message.includes("400")) {
+          $("#custom-error-message-phone").text(
+            "This number is already subscribed."
+          );
+        } else {
+          console.error("Error:", error);
+        }
+      });
   });
 
   // Show the form after a delay on page load
@@ -84,16 +103,13 @@ $(document).ready(function () {
     }, 3000);
   });
 
-  // Show the form when a button with class "subcsribe-btn" is clicked
-  $(".subcsribe-btn").on("click", function () {
+  // Show the form when a button with class "subscribe-btn" is clicked
+  $(".subscribe-btn").on("click", function () {
     setTimeout(function () {
       $popOverlay.fadeIn();
       $subscribeWindow.fadeIn();
     }, 1000);
   });
-
-  // Custom validation function
-  // ...
 
   // Custom validation function
   function customValidation() {
@@ -119,18 +135,14 @@ $(document).ready(function () {
         "Please enter a valid phone number starting with 012, 011, 010, or 015, followed by 8 digits."
       );
       isValid = false;
-    } else {
-      // Check if the phone number is already in local storage
-      var savedPhoneNumber = localStorage.getItem("savedPhoneNumber");
-      if (savedPhoneNumber && savedPhoneNumber === phoneInput.trim()) {
-        $("#custom-error-message-phone").text(
-          "Phone number is already in use."
-        );
-        isValid = false;
-      } else {
-        // Save the phone number to local storage
-        localStorage.setItem("savedPhoneNumber", phoneInput.trim());
-      }
+      //  } else {
+      //   // Check if the phone number is already in the sheet
+      //   if (existingPhoneNumbers.includes(phoneInput.trim())) {
+      //     $("#custom-error-message-phone").text(
+      //       "Phone number already in use. Please enter a unique number."
+      //     );
+      //     isValid = false;
+      //   }
     }
 
     return isValid;
