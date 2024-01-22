@@ -41,6 +41,13 @@
           </li>
         </ul>
       </div>
+      <div class="row">
+        <div class="col"></div>
+        <button class="btnn col subcsribe-btn mt-2" type="button">
+          <i class="fa fa-check" aria-hidden="true"></i> Subscribe Now
+        </button>
+        <div class="col"></div>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -50,7 +57,12 @@
             <p class="subcsribe-text">
               Subscribe to receive news and information
             </p>
-            <form class="subscribe-form" autocomplete="off" id="subscribeForm">
+            <form
+              class="subscribe-form needs-validation"
+              novalidate
+              autocomplete="off"
+              id="subscribeForm"
+            >
               <div>
                 <input
                   type="text"
@@ -60,7 +72,11 @@
                   required
                 />
                 <label for="name-subscribe"> <span>Name</span></label>
+                <div class="invalid-feedback">
+                  Please enter your name (at least 3 characters).
+                </div>
               </div>
+              <div id="custom-error-message-name" class="text-danger"></div>
               <div>
                 <input
                   type="text"
@@ -70,11 +86,16 @@
                   required
                 />
                 <label for="number-subscribe"> <span>Phone</span></label>
+                <div class="invalid-feedback">
+                  Please enter a valid phone number (exactly 11 digits).
+                </div>
               </div>
+              <div id="custom-error-message-phone" class="text-danger"></div>
               <button type="submit" value="Submit" class="btn aligncenter">
                 <i class="fa fa-check" aria-hidden="true"></i> Subscribe
               </button>
             </form>
+
             <div class="close-btn">&times;</div>
           </div>
 

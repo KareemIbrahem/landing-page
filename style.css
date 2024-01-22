@@ -166,6 +166,18 @@ ul > li {
   color: #fff;
   border-radius: 4px;
 }
+.btnn {
+  color: #f2cb08;
+  background-color: #0c0c0d;
+  padding: 10px 50px;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #0c0c0d;
+  box-shadow: none;
+  display: inline-block;
+  text-decoration: none;
+  display: inline-block;
+}
 .btn {
   color: #f2cb08;
   background-color: #0c0c0d;
@@ -180,6 +192,7 @@ ul > li {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+
 .btn:hover,
 .btn:focus {
   background-color: #f2cb08;
@@ -300,4 +313,17 @@ ul > li {
 .content {
   opacity: 0; /* Initially hide the content */
   transition: opacity 1s ease-in-out; /* Add a transition effect */
+}
+
+.error-modal {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f2cb08;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

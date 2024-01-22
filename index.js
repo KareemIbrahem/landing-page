@@ -4,6 +4,7 @@ $(document).ready(function () {
     const contentElement = document.querySelector(".content");
     contentElement.style.opacity = "1";
   }, 1000);
+
   // Get the date
   function calculateFutureDate() {
     var currentDate = new Date();
@@ -21,13 +22,13 @@ $(document).ready(function () {
     offset: -4,
   });
 
+  // Close Pop-Up after clicking on the button "Close"
   var $popClose = $(".close-btn");
   var $popOverlay = $(".popup-overlay");
   var $popWindow = $(".popWindow");
   var $subscribeWindow = $(".subscribe_window");
   var $popThankYouWindow = $(".thank_you_window");
 
-  // Close Pop-Up after clicking on the button "Close"
   $popClose.on("click", function () {
     $popOverlay.fadeOut();
     $popWindow.fadeOut();
@@ -44,6 +45,11 @@ $(document).ready(function () {
   // Form submission
   $(".subscribe-form").on("submit", function (event) {
     event.preventDefault();
+
+    // Custom validation logic
+    if (!customValidation()) {
+      return;
+    }
 
     console.log("sheet");
     let name = $('[name="name"]').val();
@@ -70,10 +76,51 @@ $(document).ready(function () {
       .catch((error) => console.error("Error:", error));
   });
 
+  // Show the form after a delay on page load
   $(window).on("load", function () {
     setTimeout(function () {
       $popOverlay.fadeIn();
       $subscribeWindow.fadeIn();
     }, 3000);
   });
+
+  // Show the form when a button with class "subcsribe-btn" is clicked
+  $(".subcsribe-btn").on("click", function () {
+    setTimeout(function () {
+      $popOverlay.fadeIn();
+      $subscribeWindow.fadeIn();
+    }, 1000);
+  });
+
+  // Custom validation function
+  // ...
+
+  // Custom validation function
+  function customValidation() {
+    var nameInput = $('[name="name"]').val();
+    var phoneInput = $('[name="phone"]').val();
+    var isValid = true;
+
+    // Reset previous error messages
+    $("#custom-error-message-name").text("");
+    $("#custom-error-message-phone").text("");
+
+    // Custom validation logic for name
+    if (nameInput.trim().length < 3) {
+      $("#custom-error-message-name").text(
+        "Name should be at least 3 characters."
+      );
+      isValid = false;
+    }
+
+    // Custom validation logic for phone
+    if (!/^\d{11}$/.test(phoneInput.trim())) {
+      $("#custom-error-message-phone").text(
+        "Phone number should have exactly 11 digits."
+      );
+      isValid = false;
+    }
+
+    return isValid;
+  }
 });
