@@ -252,8 +252,9 @@ ul > li {
 
 .thank_you_window .thank_you_title {
   font-family: "airstrike", sans-serif;
-  color: #f2cb08;
   font-size: 32px;
+  color: black;
+
   line-height: 50px;
   font-weight: 700;
   margin-bottom: 10px;
