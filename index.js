@@ -114,11 +114,23 @@ $(document).ready(function () {
     }
 
     // Custom validation logic for phone
-    if (!/^\d{11}$/.test(phoneInput.trim())) {
+    if (!/^(012|011|010|015)\d{8}$/.test(phoneInput.trim())) {
       $("#custom-error-message-phone").text(
-        "Phone number should have exactly 11 digits."
+        "Please enter a valid phone number starting with 012, 011, 010, or 015, followed by 8 digits."
       );
       isValid = false;
+    } else {
+      // Check if the phone number is already in local storage
+      var savedPhoneNumber = localStorage.getItem("savedPhoneNumber");
+      if (savedPhoneNumber && savedPhoneNumber === phoneInput.trim()) {
+        $("#custom-error-message-phone").text(
+          "Phone number is already in use."
+        );
+        isValid = false;
+      } else {
+        // Save the phone number to local storage
+        localStorage.setItem("savedPhoneNumber", phoneInput.trim());
+      }
     }
 
     return isValid;
