@@ -7,7 +7,9 @@ $(document).ready(function () {
 
   // Get the future date for countdown
   function calculateFutureDate() {
-    var fixedDate = new Date();
+    var fixedDate = new Date(
+      "Tue Jan 21 2024 13:38:20 GMT+0200 (Eastern European Standard Time)"
+    );
     fixedDate.setDate(fixedDate.getDate() + 25); // Set to 25 days from now
 
     var dd = fixedDate.getDate();
