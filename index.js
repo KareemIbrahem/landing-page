@@ -7,12 +7,12 @@ $(document).ready(function () {
 
   // Get the future date for countdown
   function calculateFutureDate() {
-    var currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() + 20);
+    var fixedDate = new Date();
+    fixedDate.setDate(fixedDate.getDate() + 25); // Set to 25 days from now
 
-    var dd = currentDate.getDate();
-    var mm = currentDate.getMonth() + 1;
-    var y = currentDate.getFullYear();
+    var dd = fixedDate.getDate();
+    var mm = fixedDate.getMonth() + 1;
+    var y = fixedDate.getFullYear();
 
     return `${mm}/${dd}/${y} 12:00:00`;
   }
