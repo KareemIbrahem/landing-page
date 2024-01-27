@@ -54,7 +54,6 @@ $(document).ready(function () {
       return;
     }
 
-    console.log("sheet");
     let name = $('[name="name"]').val();
     let phone = $('[name="phone"]').val();
 
@@ -91,8 +90,6 @@ $(document).ready(function () {
           $("#custom-error-message-phone").text(
             "This number is already subscribed."
           );
-        } else {
-          console.error("Error:", error);
         }
       });
   });
